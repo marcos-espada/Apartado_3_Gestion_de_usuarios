@@ -1,8 +1,18 @@
 #creación de usuarios
-sudo useradd -g Explotacion -d /home/usu_explotacion -m -s /bin/bash usu_explotacion
+sudo useradd -g (nombre del grupo) -d /home/(nombre de usuario) -m -s /bin/bash (nombre de usuario)
 #creación de grupos
-sudo groupadd Informacion
+sudo groupadd (nombre del grupo)
 #lista para ver los GID
 cat /etc/group
 #lista para ver los usuarios
 getent passwd
+#poner la contraseña / cambiar la contraseña
+passwd (nombre de usuario)
+#permisos acl
+setfacl -m d:g:Informacion:rwx proyectos/
+setfacl -m g:Desarrollo:rw proyectos/
+setfacl -m g:Explotacion:rw proyectos/
+setfacl -m g:Desarrollo:rwx src/
+setfacl -m g:Desarrollo:rw prueba/
+setfacl -m g:Explotacion:rwx src/
+setfacl -m g:Explotacion:rwx prueba/
