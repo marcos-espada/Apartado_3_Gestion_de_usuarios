@@ -1,0 +1,8 @@
+#creación de usuarios
+sudo useradd -g Explotacion -d /home/usu_explotacion -m -s /bin/bash usu_explotacion
+#creación de grupos
+sudo groupadd Informacion
+#lista para ver los GID
+cat /etc/group
+#lista para ver los usuarios
+getent passwd
